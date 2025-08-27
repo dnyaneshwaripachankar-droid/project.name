@@ -1,139 +1,107 @@
-// Select elements
-const hamburger = document.querySelector(".hamburger");
+// Theme Toggle
+constthemeToggle = document.getElementById("theme-toggle");
+constbody = document.body;
+
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  // Change button icon based on mode
+  if (body.classList.contains("dark")) {
+    themeToggle.textContent = "☀️"; // Light Mode Icon
+  } else {
+    themeToggle.textContent = "🌙"; // Dark Mode Icon
+  }
+});
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-// Toggle Menu on Click
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-
-    // Animate Hamburger
-    hamburger.classList.toggle("open");
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
 });
-// Smooth Scroll for buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Theme Toggle Button
+const htemeToggle = document.getElementById("theme-toggle");
+constbody = document.body;
+
+// Change Theme on Button Click
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  // Update Button Icon
+  if (body.classList.contains("dark")) {
+    themeToggle.textContent = "☀️"; // Light Mode Icon
+  } else {
+    themeToggle.textContent = "🌙"; // Dark Mode Icon
+  }
 });
-// Fade-in effect on scroll
-const aboutSection = document.querySelector(".about-content");
+// Theme Toggle Button
+const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
 
-window.addEventListener("scroll", () => {
-    const sectionPos = aboutSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight / 1.2;
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
 
-    if (sectionPos < screenPos) {
-        aboutSection.style.opacity = "1";
-        aboutSection.style.transform = "translateY(0)";
-    }
-});
-// Reveal Services on Scroll
-const serviceCards = document.querySelectorAll(".service-card");
-
-window.addEventListener("scroll", () => {
-    serviceCards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (cardTop < windowHeight - 50) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-            card.style.transition = "all 0.7s ease";
-        }
-    });
-});
-// Animate energy cards on scroll
-const energyCards = document.querySelectorAll(".energy-card");
-
-window.addEventListener("scroll", () => {
-    energyCards.forEach(card => {
-        const position = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (position < windowHeight - 50) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-            card.style.transition = "all 0.7s ease";
-        }
-    });
-});
-// Animate schemes on scroll
-const schemeCards = document.querySelectorAll(".scheme-card");
-
-window.addEventListener("scroll", () => {
-    schemeCards.forEach(card => {
-        const position = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (position < windowHeight - 50) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-            card.style.transition = "all 0.7s ease";
-        }
-    });
-});
-// Smooth Fade-in Animation for Project Cards
-const projectCards = document.querySelectorAll(".project-card");
-
-window.addEventListener("scroll", () => {
-    projectCards.forEach(card => {
-        const cardPosition = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (cardPosition < windowHeight - 50) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-            card.style.transition = "all 0.8s ease";
-        }
-    });
-});
-// Scroll Animation for Cards
-const cards = document.querySelectorAll(".adv-card, .dis-card");
-
-window.addEventListener("scroll", () => {
-    cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (cardTop < windowHeight - 50) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-            card.style.transition = "all 0.8s ease";
-        }
-    });
-});
-// Testimonials Slider
-const slider = document.querySelector(".testimonials-slider");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-
-let scrollAmount = 0;
-const scrollStep = 350;
-
-nextBtn.addEventListener("click", () => {
-    slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+  // Update icon
+  if (body.classList.contains("dark")) {
+    themeToggle.textContent = "☀️"; // Light mode icon
+  } else {
+    themeToggle.textContent = "🌙"; // Dark mode icon
+  }
 });
 
-prevBtn.addEventListener("click", () => {
-    slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
+// Add to Cart buttons
+document.querySelectorAll(".add-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Pizza added to cart! 🍕");
+  });
 });
-// Contact Form Submission (Basic)
-const contactForm = document.getElementById("contactForm");
+// Theme Toggle Button
+constthemeToggle = document.getElementById("theme-toggle");
+constbody = document.body;
 
-contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert("Thank you! Your message has been sent.");
-    contactForm.reset();
-});
-// Newsletter Form Submission
-const newsletterForm = document.getElementById("newsletterForm");
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
 
-newsletterForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert("Thank you for subscribing!");
-    newsletterForm.reset();
+  // Update icon
+  if (body.classList.contains("dark")) {
+    themeToggle.textContent = "☀️"; // Light mode icon
+  } else {
+    themeToggle.textContent = "🌙"; // Dark mode icon
+  }
 });
 
+// Offer Buttons
+document.querySelectorAll(".offer-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Offer Applied! 🎉");
+  });
+});
+// Theme Toggle Button
+constthemeToggle = document.getElementById("theme-toggle");
+constbody = document.body;
+
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  // Update icon
+  if (body.classList.contains("dark")) {
+    themeToggle.textContent = "☀️"; // Light mode icon
+  } else {
+    themeToggle.textContent = "🌙"; // Dark mode icon
+  }
+});
+// Theme Toggle Button
+constthemeToggle = document.getElementById("theme-toggle");
+constbody = document.body;
+
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  // Update icon
+  if (body.classList.contains("dark")) {
+    themeToggle.textContent = "☀️"; // Light mode icon
+  } else {
+    themeToggle.textContent = "🌙"; // Dark mode icon
+  }
+});
